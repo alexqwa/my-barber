@@ -1,5 +1,6 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { router } from "expo-router";
 import { Feather } from "@expo/vector-icons";
+import { View, Text, TouchableOpacity, Image, StatusBar } from "react-native";
 
 import Illustration from "../assets/illustration.svg";
 import profileImg from "../assets/profile.png";
@@ -7,10 +8,11 @@ import profileImg from "../assets/profile.png";
 export default function Home() {
   return (
     <View className="bg-[#F0F0F7] flex-1 items-center">
+      <StatusBar barStyle={"light-content"} backgroundColor={"#8257E5"} />
       <View className="bg-[#8257E5] w-full justify-center items-center">
         <View className="flex-row items-center justify-between w-full max-w-[80%] mt-16">
           <View className="flex-row items-center">
-            <View className="bg-white h-[48px] w-[48px] rounded-full">
+            <View className="h-[48px] w-[48px] rounded-full">
               <Image source={profileImg} className="rounded-full" />
             </View>
             <Text className="ml-4 font-poppins_500 text-sm text-white">
@@ -36,6 +38,7 @@ export default function Home() {
         <View className="gap-4 flex-row items-center mt-6">
           <TouchableOpacity
             activeOpacity={0.7}
+            onPress={() => router.push("listbarber")}
             className="bg-[#8257E5] flex-1 h-[158px] rounded-lg"
           >
             <View className="p-6 justify-between flex-1">

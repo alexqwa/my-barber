@@ -39,6 +39,7 @@ export default function StackRoutesLayout() {
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" options={{ title: "Home" }} />
       <Stack.Screen name="signin" options={{ title: "SingIn" }} />
+      <Stack.Screen name="listbarber" options={{ title: "ListBarber" }} />
       <Stack.Screen
         name="forgotpassword"
         options={{ title: "ForgotPassword" }}

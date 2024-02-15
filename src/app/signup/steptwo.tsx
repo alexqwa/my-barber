@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 export default function SignUpStepTwo() {
-  const { goBack, navigate, dispatch } = useNavigation();
+  const { goBack, navigate } = useNavigation();
 
   return (
     <View className="bg-[#F0F0F7] flex-1 items-center">

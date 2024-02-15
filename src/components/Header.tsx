@@ -4,20 +4,26 @@ import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
 
 import Logo from "../assets/logo.svg";
 
-export function Header() {
+type HeaderProps = {
+  title: string;
+};
+
+export function Header({ title }: HeaderProps) {
   const { goBack } = useNavigation();
 
   return (
-    <SafeAreaView>
-      <View className="w-full bg-[#774DD6] h-[70px] items-center justify-between border-b-2 border-[#6842C2] px-10 flex-row mt-10">
-        <TouchableOpacity activeOpacity={0.7}>
+    <View className="w-full bg-[#774DD6] h-[70px] items-center justify-center border-b border-[#6842C2] mt-8">
+      <View className="flex-row max-w-[80%] w-full justify-between items-center">
+        <TouchableOpacity
+          onPress={() => goBack()}
+          activeOpacity={0.7}
+          className="p-2 -ml-2"
+        >
           <Feather name="arrow-left" size={24} color="#D4C2FF" />
         </TouchableOpacity>
-        <Text className="font-archivo_500 text-sm text-[#D4C2FF]">
-          Meu perfil
-        </Text>
+        <Text className="font-archivo_500 text-sm text-[#D4C2FF]">{title}</Text>
         <Logo />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }

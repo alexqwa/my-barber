@@ -4,7 +4,7 @@ import { View, Text, TextInput, TouchableOpacity } from "react-native";
 
 import BackgroundAuth from "../assets/bg_auth.svg";
 
-export default function Home() {
+export default function ForgotPassword() {
   const { goBack } = useNavigation();
 
   return (

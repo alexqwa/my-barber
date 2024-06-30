@@ -21,6 +21,7 @@ export default function Home() {
           </View>
           <TouchableOpacity
             activeOpacity={0.7}
+            onPress={() => router.push("signin")}
             className="bg-[#774DD6] w-10 h-10 rounded-lg items-center justify-center"
           >
             <Feather name="power" size={20} color="#fff" />
@@ -53,15 +54,15 @@ export default function Home() {
             className="bg-[#04D361] flex-1 h-[158px] rounded-lg"
           >
             <View className="p-6 justify-between flex-1">
-              <Feather name="home" size={32} color="#fff" />
+              <Feather name="heart" size={32} color="#fff" />
               <Text className="text-white text-base font-archivo_700">
-                Minha{"\n"}Barbearia
+                Minhas{"\n"}Favoritas
               </Text>
             </View>
           </TouchableOpacity>
         </View>
         <Text className="mt-16 font-poppins_400 text-xs text-[#9C98A6] leading-5">
-          Total de 437 barbearias{"\n"}perto de você. 💜
+          Total de 76 barbearias{"\n"}perto de você. 💜
         </Text>
       </View>
     </View>

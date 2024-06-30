@@ -7,6 +7,7 @@ export declare global {
       steptwo: undefined;
       completed: undefined;
       listbarber: undefined;
+      scheduletime: undefined;
       forgotpassword: undefined;
     }
   }

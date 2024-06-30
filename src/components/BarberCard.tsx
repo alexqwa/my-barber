@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
 import {
   View,
@@ -9,31 +10,26 @@ import {
 
 import profileImg from "../assets/profile.png";
 
-import { OpeningHours } from "./OpeningHours";
+import { OpeningTimesInTheWeek } from "./OpeningTimesInTheWeek";
 
 interface BarberProps extends TouchableOpacityProps {
-  price: number;
-  region: string;
+  rating: number;
   titleBarber: string;
 }
 
-export function BarberCard({
-  price,
-  region,
-  titleBarber,
-  ...rest
-}: BarberProps) {
+export function BarberCard({ rating, titleBarber, ...rest }: BarberProps) {
   return (
-    <View className="bg-white divide-y-[1px] divide-[#E6E6F0] max-w-[90%] w-full rounded-lg -mt-16">
+    <View className="bg-white divide-y-[1px] divide-[#E6E6F0] max-w-[90%] w-full rounded-lg mb-5">
       <View className="flex-row items-center m-6">
         <Image source={profileImg} className="rounded-full w-16 h-16" />
-        <View className="space-y-1 ml-5">
+        <View className="flex-col space-y-1 ml-5">
           <Text className="font-archivo_700 text-[#32264D] text-xl">
             {titleBarber}
           </Text>
-          <Text className="font-poppins_400 text-[#6A6180] text-xs">
-            Atende em: {region}
-          </Text>
+          <View className="w-16 h-6 rounded-full border border-[#E6E6F0] flex-row items-center justify-between px-2">
+            <MaterialIcons name="star-rate" size={16} color="#8257E5" />
+            <Text className="font-archivo_700 text-[#8257E5]">{rating}</Text>
+          </View>
         </View>
       </View>
       <View className="p-6">
@@ -44,22 +40,34 @@ export function BarberCard({
           </Text>
         </View>
         <View className="mt-2">
-          <OpeningHours open={true} day="Segunda" hours={{ at: 7, to: 12 }} />
-          <OpeningHours open={false} day="Terça" hours={{ at: 8, to: 14 }} />
-          <OpeningHours open={true} day="Quarta" hours={{ at: 7, to: 12 }} />
-          <OpeningHours open={false} day="Quinta" hours={{ at: 8, to: 14 }} />
-          <OpeningHours open={true} day="Sexta" hours={{ at: 7, to: 12 }} />
+          <OpeningTimesInTheWeek
+            open={true}
+            day="Segunda-feira"
+            hours={{ at: 7, to: 18 }}
+          />
+          <OpeningTimesInTheWeek
+            open={false}
+            day="Terça-feira"
+            hours={{ at: 7, to: 18 }}
+          />
+          <OpeningTimesInTheWeek
+            open={true}
+            day="Quarta-feira"
+            hours={{ at: 7, to: 18 }}
+          />
+          <OpeningTimesInTheWeek
+            open={false}
+            day="Quinta-feira"
+            hours={{ at: 7, to: 18 }}
+          />
+          <OpeningTimesInTheWeek
+            open={true}
+            day="Sexta-feira"
+            hours={{ at: 7, to: 18 }}
+          />
         </View>
       </View>
       <View className="p-6">
-        <View className="flex-row items-center justify-between mb-4">
-          <Text className="font-poppins_400 text-[#6A6180] text-sm">
-            Preço do corte:
-          </Text>
-          <Text className="font-archivo_700 text-[#8257E5] text-base">
-            R$ {price} reais
-          </Text>
-        </View>
         <View className="flex-row gap-2">
           <TouchableOpacity
             {...rest}
@@ -70,6 +78,7 @@ export function BarberCard({
           </TouchableOpacity>
           <TouchableOpacity
             {...rest}
+            onPress={() => router.push("scheduletime")}
             activeOpacity={0.7}
             className="bg-[#04D361] flex-1 rounded-lg items-center justify-center flex-row space-x-2"
           >

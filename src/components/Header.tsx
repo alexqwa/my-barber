@@ -1,6 +1,6 @@
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
-import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 import Logo from "../assets/logo.svg";
 
@@ -17,7 +17,7 @@ export function Header({ title }: HeaderProps) {
         <TouchableOpacity
           onPress={() => goBack()}
           activeOpacity={0.7}
-          className="p-2 -ml-2"
+          className="p-4 -ml-4"
         >
           <Feather name="arrow-left" size={24} color="#D4C2FF" />
         </TouchableOpacity>

@@ -11,7 +11,7 @@ interface OpeningProps {
   };
 }
 
-export function OpeningHours({ day, hours, open }: OpeningProps) {
+export function OpeningTimesInTheWeek({ day, hours, open }: OpeningProps) {
   return (
     <View
       className={clsx(
@@ -20,7 +20,7 @@ export function OpeningHours({ day, hours, open }: OpeningProps) {
       )}
     >
       <Text className="font-archivo_700 text-base text-[#6A6180]">{day}</Text>
-      <View className="absolute left-1/2 -translate-x-1/2">
+      <View className="absolute left-1/2 ml-7 -translate-x-1/2">
         <MaterialIcons name="double-arrow" color="#E6E6F0" size={20} />
       </View>
       <Text className="font-archivo_700 text-base text-[#6A6180]">

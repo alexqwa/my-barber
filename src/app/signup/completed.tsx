@@ -1,11 +1,5 @@
 import { useNavigation } from "expo-router";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ImageBackground,
-  StatusBar,
-} from "react-native";
+import { View, Text, TouchableOpacity, StatusBar } from "react-native";
 
 import Logo from "../../assets/completed.svg";
 import Background from "../../assets/bg_completed.svg";
@@ -23,7 +17,7 @@ export default function Completed() {
           Cadastro {"\n"}concluído!
         </Text>
         <Text className="font-poppins_400 text-sm text-[#D4C2FF] text-center leading-6 mt-4">
-          Agora você faz parte da {"\n"}plataforma da Meu Barbeiro
+          Agora você faz parte do {"\n"}plataforma da Meu Barbeiro
         </Text>
       </View>
       <TouchableOpacity
